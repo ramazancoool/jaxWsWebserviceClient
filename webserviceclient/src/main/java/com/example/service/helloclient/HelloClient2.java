@@ -18,8 +18,10 @@ import com.example.service.IHelloWorld;
 
 public class HelloClient2 {
 
-//	@WebServiceRef(wsdlLocation="http://localhost:8080/ws/hello?wsdl")
-//	static IHelloWorld service;
+	//This is for Tcp/IP monitoring.
+	//To use this code, Open Window->Preferences->TCP/IP Monitoring
+	//Enter your host name to and enter a different port to port. Choose protocol TCP/IP
+	//Open the window "Window->Show view->TCP/IP Monitor", so you can watch request and response
 	private static String WEB_SERVICE_WSDL_URL = "http://localhost:8090/ws/hello?wsdl";
 	
 	public static void main(String[] args) throws MalformedURLException {
@@ -35,11 +37,11 @@ public class HelloClient2 {
 		Map<String, Object> req_ctx = ((BindingProvider) port).getRequestContext();
 
 		Map<String, List<String>> headers = new HashMap<String, List<String>>();
-        headers.put("Username", Collections.singletonList("ramazan"));
+        headers.put("Username", Collections.singletonList("Jack"));
         headers.put("Password", Collections.singletonList("1234"));
         req_ctx.put(MessageContext.HTTP_REQUEST_HEADERS, headers);
 		
-		String serviceResponse = port.getHelloWorld("ramazan");
+		String serviceResponse = port.getHelloWorld("Jack");
 		
 		System.out.println(serviceResponse);
 	}

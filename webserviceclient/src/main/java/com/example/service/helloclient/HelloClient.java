@@ -29,11 +29,12 @@ public class HelloClient {
 		Map<String, Object> req_ctx = ((BindingProvider) port).getRequestContext();
 
 		Map<String, List<String>> headers = new HashMap<String, List<String>>();
-        headers.put("Username", Collections.singletonList("ramazan"));
+		//If you write different username or password, it throw invalid user exception.
+        headers.put("Username", Collections.singletonList("Jack"));
         headers.put("Password", Collections.singletonList("1234"));
         req_ctx.put(MessageContext.HTTP_REQUEST_HEADERS, headers);
 		
-		String serviceResponse = port.getHelloWorld("ramazan");
+		String serviceResponse = port.getHelloWorld("Jack");
 		
 		System.out.println(serviceResponse);
 	}

@@ -39,7 +39,7 @@ public class HelloWorldServiceImpl implements IHelloWorld {
 
 	private boolean isExistingUser(String userName, String password) {
 		
-		if(userName.equals("ramazan") && password.equals("1234")){
+		if(userName.equals("Jack") && password.equals("1234")){
 			return true;
 		}
 		
