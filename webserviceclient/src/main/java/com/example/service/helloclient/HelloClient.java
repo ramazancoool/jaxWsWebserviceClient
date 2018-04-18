@@ -6,10 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.xml.ws.BindingProvider;
-import javax.xml.ws.WebServiceRef;
 import javax.xml.ws.handler.MessageContext;
-
-import org.apache.log4j.Logger;
 
 import com.example.service.HelloWorldServiceImplService;
 import com.example.service.IHelloWorld;
@@ -17,11 +14,6 @@ import com.example.service.IHelloWorld;
 
 public class HelloClient {
 
-	@WebServiceRef(wsdlLocation="http://localhost:8080/ws/hello?wsdl")
-	static IHelloWorld service;
-	
-	private static final Logger LOGGER = Logger.getLogger(HelloClient.class);
-	
 	public static void main(String[] args) {
 		HelloWorldServiceImplService serviceFirst = new HelloWorldServiceImplService();
 		IHelloWorld port = serviceFirst.getHelloWorldServiceImplPort();
